@@ -9,3 +9,5 @@ export const closeModal =()=>{
      type:'closeModal',
     } 
  }
+
+ export const 
