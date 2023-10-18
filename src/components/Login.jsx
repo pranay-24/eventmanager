@@ -1,10 +1,19 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
 import './styles/login.css'
 
 const Login = (props) => {
     const [credentials, setCredentials] = useState({email: "", password: ""}) 
     let navigate = useNavigate();
+
+    useEffect(() => {
+        // Check if the user is already authenticated
+        const authToken = localStorage.getItem('token');
+        if (authToken) {
+            // If the user is authenticated, navigate to the homepage
+            navigate('/');
+        }
+    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
