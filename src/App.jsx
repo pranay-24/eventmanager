@@ -34,8 +34,14 @@ function App() {
       // User is not authenticated
       setAuthenticated(false);
     }
-  }, [authenticated]);
+  }, []);
 
+  if (authenticated === null) {
+    // While checking authentication, you can display a loading message or spinner
+    return <div>Loading...</div>;
+  }
+
+  
   return (
     <>
 
