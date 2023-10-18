@@ -8,13 +8,12 @@ const Login = (props) => {
     let navigate = useNavigate();
     
     useEffect(() => {
-        // Check if the user is already authenticated
-       
-        if (authToken != null && authToken !=='') {
+        // Check if the user is already authenticated when the component mounts
+        if (authToken !== null && authToken !== '') {
             // If the user is authenticated, navigate to the homepage
             navigate('/');
         }
-    }, [authToken]);
+    }, [authToken, navigate]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -27,10 +26,10 @@ const Login = (props) => {
         });
         const json = await response.json()
         console.log(json);
-        if (json.success || authToken){
+        if (json.success ){
             // Save the auth token and redirect
             localStorage.setItem('token', json.authtoken);
-            setAuthToken(localStorage.getItem('token'))
+            setAuthToken(json.authtoken);
             localStorage.setItem('role',json.role); 
             localStorage.setItem('id',json.id)
             navigate('/');
