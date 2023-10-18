@@ -7,13 +7,7 @@ const Login = (props) => {
     const [authToken,setAuthToken] = useState(localStorage.getItem('token'))
     let navigate = useNavigate();
     
-    useEffect(() => {
-        // Check if the user is already authenticated when the component mounts
-        if (authToken !== null && authToken !== '') {
-            // If the user is authenticated, navigate to the homepage
-            navigate('/');
-        }
-    }, [authToken, navigate]);
+    
 
     const handleSubmit = async (e) => {
         e.preventDefault();
