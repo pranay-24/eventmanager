@@ -20,15 +20,15 @@ const Login = (props) => {
         });
         const json = await response.json()
         console.log(json);
-        if (response.status === 200 && json.success ){
+        if ( json.success ){
             console.log(json.success);
             // Save the auth token and redirect
             localStorage.setItem('token', json.authtoken);
             //setAuthToken(json.authtoken);
             localStorage.setItem('role',json.role); 
             localStorage.setItem('id',json.id)
-           // navigate('/');
-
+            navigate('/');
+          
         }
         else{
             alert("Invalid credentials");

@@ -25,21 +25,18 @@ function App() {
     console.log(token)
     console.log(role)
 
-    if (token != null && role != null) {
+    if (token != null && role != null && token !=='' && role !== '') {
       // User is authenticated, set the authenticated state to true
       console.log("app is reloaded", )
       setAuthenticated(true);
-      console.log(authenticated)
+      console.log(authenticated);
     } else {
       // User is not authenticated
       setAuthenticated(false);
     }
-  }, []);
+  }, [authenticated]);
 
-  if (authenticated === null) {
-    // While checking authentication, you can display a loading message or spinner
-    return <div>Loading...</div>;
-  }
+
 
   
   return (
@@ -49,11 +46,12 @@ function App() {
       <BrowserRouter>
       
       <Routes>
+      <Route path="/login" element={<Login />} />
       <Route
           path="/"
           element={authenticated ? <Homepage /> : <Login />}
         />
-      <Route path="/login" element={<Login />} />
+      
       <Route
          path="/addevent"
          element={authenticated ? <Addevent /> : <Login />}
