@@ -5,15 +5,15 @@ import './styles/login.css'
 const Login = (props) => {
     const [credentials, setCredentials] = useState({email: "", password: ""}) 
     let navigate = useNavigate();
-
+    const authToken = localStorage.getItem('token');
     useEffect(() => {
         // Check if the user is already authenticated
-        const authToken = localStorage.getItem('token');
+        
         if (authToken) {
             // If the user is authenticated, navigate to the homepage
             navigate('/');
         }
-    }, []);
+    }, [authToken]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
