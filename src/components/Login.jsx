@@ -8,7 +8,7 @@ const Login = (props) => {
     const authToken = localStorage.getItem('token');
     useEffect(() => {
         // Check if the user is already authenticated
-        
+        const authToken = localStorage.getItem('token'); 
         if (authToken) {
             // If the user is authenticated, navigate to the homepage
             navigate('/');
@@ -31,7 +31,7 @@ const Login = (props) => {
             localStorage.setItem('token', json.authtoken);
             localStorage.setItem('role',json.role); 
             localStorage.setItem('id',json.id)
-            navigate('/');
+           authToken && navigate('/');
 
         }
         else{
