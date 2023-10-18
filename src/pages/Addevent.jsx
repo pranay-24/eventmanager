@@ -16,7 +16,7 @@ const role = localStorage.getItem('role')
         date: '',
         startFrom: '',
         endAt: '',
-        guestcount: 0,
+        guestcount: '',
         room: '',
       });
     
