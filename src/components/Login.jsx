@@ -27,7 +27,7 @@ const Login = (props) => {
             //setAuthToken(json.authtoken);
             localStorage.setItem('role',json.role); 
             localStorage.setItem('id',json.id)
-            navigate('/');
+           // navigate('/');
 
         }
         else{

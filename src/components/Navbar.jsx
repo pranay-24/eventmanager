@@ -15,9 +15,9 @@ const Navbar = (props) => {
     const handleLogout =async(e)=>{
     
     e.preventDefault();
-    localStorage.setItem('role','');
-    localStorage.setItem('id','');
-    localStorage.setItem('token','');
+    localStorage.removeItem('token');
+    localStorage.removeItem('role');
+    localStorage.removeItem('id');
     navigate('/login');
 
     }
