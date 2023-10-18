@@ -1,13 +1,19 @@
 import React, {useState,useEffect} from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import './styles/login.css'
 
 const Login = (props) => {
     const [credentials, setCredentials] = useState({email: "", password: ""}) 
     const [authToken,setAuthToken] = useState(localStorage.getItem('token'))
     let navigate = useNavigate();
-    
-    
+    const location = useLocation();
+    useEffect(() => {
+        // Check if the user is already authenticated and not on the homepage
+        if (authToken !== null && authToken !== '' && location.pathname !== '/') {
+            // If the user is authenticated and not on the homepage, navigate to the homepage
+            navigate('/');
+        }
+    }, [authToken, location, navigate]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
