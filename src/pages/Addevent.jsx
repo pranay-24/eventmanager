@@ -81,7 +81,7 @@ const role = localStorage.getItem('role')
               />
             </div>
             <div className="form_row ">
-              <label htmlFor="date" className="form-label">
+              <label  className="form-label">
                 Event Date<span className="required">*</span>
               </label>
               <input
@@ -90,6 +90,7 @@ const role = localStorage.getItem('role')
                 value={eventData.date}
                 onChange={onChange}
                 name="date"
+                id="date"
               />
             </div>
 
@@ -103,6 +104,7 @@ const role = localStorage.getItem('role')
                 value={eventData.startFrom}
                 onChange={onChange}
                 name="startFrom"
+                id="startFrom"
               />
             </div>
 
@@ -116,11 +118,12 @@ const role = localStorage.getItem('role')
                 value={eventData.endAt}
                 onChange={onChange}
                 name="endAt"
+                id="endAt"
               />
             </div>
 
             <div className="form_row ">
-              <label htmlFor="date" className="form-label">
+              <label className="form-label">
                 Room<span className="required">*</span>
               </label>
               <select
@@ -149,6 +152,7 @@ const role = localStorage.getItem('role')
                 value={eventData.guestcount}
                 onChange={onChange}
                 name="guestcount"
+                id="guestcount"
               />
             </div>
 
