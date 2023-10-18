@@ -74,7 +74,7 @@ fetch(`http://localhost:5000/eventapi/events/${selectedEvent}`,requestOptions)
 
 return (
     <>
-    <Navbartop />
+    {/* <Navbartop /> */}
     <Navbar active = "home"/>
     {/* <p>This is the Homepage</p> */}
     <div className="center-container">
@@ -116,7 +116,7 @@ return (
                       {' | '}
                       <Link to={`/events/update/${ev._id}`}>Update</Link>
                       { ' | '}
-                      <button onClick={()=>{ showDeleteConfirmation(ev._id)}}>Delete</button>
+                      <button className="delete-button" onClick={()=>{ showDeleteConfirmation(ev._id)}}>Delete</button>
                     </>
          )}
       </td>

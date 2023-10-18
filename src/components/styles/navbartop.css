@@ -1,5 +1,6 @@
 .container{
-    width:100%;
+    /* width:100%; */
+    width:100vw;
     margin:0px;
     padding:0px;
     display:flex;
@@ -9,9 +10,21 @@
     top:0px;
     z-index:999;
     font-family:Arial, Helvetica, sans-serif;
-    height:100px;
+    height:40px;
    
     background: white;
 	
 }
 
+.logout-button {
+    background-color: #767272;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .logout-button:hover {
+    background-color: #7c7faf;
+  }

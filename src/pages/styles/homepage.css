@@ -6,6 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top:10px;
 }
  
 table {
@@ -30,7 +31,7 @@ td {
 display:flex;
 justify-content: center;
 align-items: center;
-
+padding:100px;
 }
 
 
@@ -64,4 +65,17 @@ align-items: center;
     top: 10px;
     right: 10px;
     cursor: pointer;
+  }
+
+  .delete-button {
+    background-color: #767272;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .delete-button:hover {
+    background-color: #cb7c7c;
   }

@@ -69,7 +69,7 @@ const Updatevent = () => {
 
       if (response.ok) {
         // Redirect to the homepage or wherever you want to go
-        navigate('/events');
+        navigate('/');
       } else {
         alert('event creation failed');
       }
@@ -105,7 +105,7 @@ const Updatevent = () => {
                 Event Date<span className="required">*</span>
               </label>
               <input
-                type="date"
+                type="text"
                 className="form-control"
                 value={eventData.date}
                 onChange={onChange}
@@ -118,7 +118,7 @@ const Updatevent = () => {
                 Start time<span className="required">*</span>
               </label>
               <input
-                type="date"
+                type="text"
                 className="form-control"
                 value={eventData.startFrom}
                 onChange={onChange}
@@ -131,7 +131,7 @@ const Updatevent = () => {
                 End time<span className="required">*</span>
               </label>
               <input
-                type="date"
+                type="text"
                 className="form-control"
                 value={eventData.endAt}
                 onChange={onChange}

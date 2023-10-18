@@ -171,7 +171,7 @@ const Updateuser = () => {
         </div>
 
         {/* Section 2: Emergency Contact */}
-        <div className="section">
+        {/* <div className="section">
           <h2>Emergency Contact</h2>
           <div className="form-group">
             <label htmlFor="emergencyFullName">Full Name</label>
@@ -203,11 +203,11 @@ const Updateuser = () => {
             />
 
           </div>
-          {/* Add more emergency contact fields here */}
-        </div>
+          
+        </div> */}
 
         {/* Section 3: Hospital Preference */}
-        <div className="section">
+        {/* <div className="section">
           <h2>Hospital Preference</h2>
           <div className="form-group">
             <label htmlFor="preferredHospitalName">Hospital Name</label>
@@ -241,11 +241,11 @@ const Updateuser = () => {
             />
 
           </div>
-          {/* Add more hospital preference fields here */}
-        </div>
+         
+        </div> */}
 
         {/* Section 4: Insurance Details */}
-        <div className="section">
+        {/* <div className="section">
           <h2>Insurance Details</h2>
           <div className="form-group">
             <label htmlFor="insuranceCompany">Insurance Company</label>
@@ -277,8 +277,8 @@ const Updateuser = () => {
             />
 
           </div>
-          {/* Add more insurance details fields here */}
-        </div>
+      
+        </div> */}
 
         {/* Submit Button */}
         <button type="submit" className="btn btn-primary">

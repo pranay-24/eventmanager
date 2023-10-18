@@ -40,9 +40,9 @@ useEffect(()=>{
 
 return (
     <>
-    <Navbar active = "Staff"/>
+    <Navbar active = "staff"/>
     {/* <p>This is the Homepage</p> */}
-    <div>
+    <div className="center-container">
 
     
     <table>

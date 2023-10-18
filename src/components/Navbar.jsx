@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 import "./styles/navBar.css";
 
@@ -7,11 +7,37 @@ const Navbar = (props) => {
 	const id= localStorage.getItem('id');
 	const role = localStorage.getItem('role');
 	const { active } = props;
+	const navigate = useNavigate();
+    
+
+    const handleLogout =async(e)=>{
+    
+    e.preventDefault();
+    localStorage.setItem('role','');
+    localStorage.setItem('id','');
+    localStorage.setItem('token','');
+    navigate('/login');
+
+    }
 
 	return (
 		<React.Fragment>
 			{/* <div className="nav-container"> */}
+	
 				<nav className="navbar">
+				<div>
+				<header className="container  ">
+      <div className="col-md-3 mb-2 mb-md-0">
+        <a href="/" className="d-inline-flex link-body-emphasis text-decoration-none">
+          Event Manager
+        </a>
+      </div>
+      <div className="col-md-3 ">
+        <button className="logout-button" onClick={handleLogout}>Logout</button>
+        {/* <button type="button" className="btn btn-primary">Sign-up</button> */}
+      </div>
+    </header>
+	</div>
 					<div className="nav-background">
 						<ul className="nav-list">
 							<li

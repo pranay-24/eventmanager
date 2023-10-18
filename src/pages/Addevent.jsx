@@ -4,6 +4,7 @@ import {useNavigate} from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import './styles/addevent.css'
 import './styles/eventdetail.css'
+import './styles/homepage.css'
 const Addevent = ()=>{
 const token = localStorage.getItem('token')
 const role = localStorage.getItem('role')
@@ -23,7 +24,7 @@ const role = localStorage.getItem('role')
         e.preventDefault();
 
           // Validate required fields
-    if (!eventData.name || !eventData.date || !eventData.startFrom || !eventData.endAt || !eventData.room) {
+    if (!eventData.name ) {
       alert('Please fill in all required fields.');
       return;
     }
@@ -55,23 +56,13 @@ const role = localStorage.getItem('role')
       };
     
       const onChange = (e) => {
-
-        const {name,value} = e.target;
-      
-        const updatedEventData = {...eventData};
-
-        updatedEventData[name]=value;
-        if(name === 'date'){
-          updatedEventData[name] = value.getTime();
-        }
-
-        setEventData(updatedEventData);
-        console.log(updatedEventData);
+        setEventData({ ...eventData, [e.target.name]: e.target.value });
       };
     
       return (
         <div>
        <Navbar active = "addevent"/>
+       <div className="center-container">
           <form onSubmit={handleSubmit}>
             <div className="form_container">
             <div className="form_row ">
@@ -92,7 +83,7 @@ const role = localStorage.getItem('role')
                 Event Date<span className="required">*</span>
               </label>
               <input
-                type="date"
+                type="text"
                 className="form-control"
                 value={eventData.date}
                 onChange={onChange}
@@ -105,7 +96,7 @@ const role = localStorage.getItem('role')
                 Start time<span className="required">*</span>
               </label>
               <input
-                type="date"
+                type="text"
                 className="form-control"
                 value={eventData.startFrom}
                 onChange={onChange}
@@ -118,7 +109,7 @@ const role = localStorage.getItem('role')
                 End time<span className="required">*</span>
               </label>
               <input
-                type="date"
+                type="text"
                 className="form-control"
                 value={eventData.endAt}
                 onChange={onChange}
@@ -166,6 +157,7 @@ const role = localStorage.getItem('role')
             </button>
             </div>
           </form>
+          </div>
         </div>
       );
 }

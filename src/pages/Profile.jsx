@@ -41,8 +41,8 @@ useEffect(()=>{
 
 return (
     <>
-    <Navbar active = "home"/>
-    <p>This is the profile page </p>
+    <Navbar active = "profile"/>
+   
 
     <div className="section">
           <h2>Personal Information</h2>
@@ -86,7 +86,7 @@ return (
         </div>
     </div>
 
-    <div className="section">
+    {/* <div className="section">
           <h2>Emergency Contact</h2>
           <div className="form-group">
             <div>
@@ -147,7 +147,7 @@ return (
             </div>
 
           </div>
-    </div>
+    </div> */}
 
 
     </>
