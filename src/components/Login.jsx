@@ -10,7 +10,7 @@ const Login = (props) => {
     useEffect(() => {
         // Check if the user is already authenticated
        
-        if (authToken) {
+        if (authToken != null && authToken !=='') {
             // If the user is authenticated, navigate to the homepage
             navigate('/');
         }
