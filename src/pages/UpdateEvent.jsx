@@ -83,8 +83,11 @@ const Updatevent = () => {
   };
 
   return (
-    <div>
+    <>
       <Navbar active="Staff" />
+      <div className="center-container">
+
+     
       <form onSubmit={handleSubmit}>
             <div className="form_container">
             <div className="form_row ">
@@ -174,12 +177,13 @@ const Updatevent = () => {
 
 
             {/* Add other event fields here */}
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="normal-button">
               Update Event
             </button>
             </div>
           </form>
-    </div>
+          </div>
+    </>
   );
 };
 

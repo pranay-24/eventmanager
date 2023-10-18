@@ -2,7 +2,7 @@ import React from 'react'
 import {useEffect,useState} from 'react'
 import Navbar from '../components/Navbar'
 import {useParams} from 'react-router-dom'
-
+import './styles/homepage.css'
 const token = localStorage.getItem('token')
 const role = localStorage.getItem('role')
 
@@ -41,10 +41,13 @@ useEffect(()=>{
 
 return (
     <>
-    <Navbar active = "profile"/>
-   
+    <div className="slideleft">
 
-    <div className="section">
+ 
+    <Navbar active = "profile"/>
+    </div>
+<div className="center-container">
+    <div className="">
           <h2>Personal Information</h2>
           <div className="form-group">
             <div>
@@ -149,7 +152,7 @@ return (
           </div>
     </div> */}
 
-
+</div>
     </>
 )
 }

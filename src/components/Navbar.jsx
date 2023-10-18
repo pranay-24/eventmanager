@@ -1,9 +1,11 @@
-import React from "react";
+import React,{useState} from "react";
 import { Link,useNavigate } from "react-router-dom";
 
 import "./styles/navBar.css";
 
 const Navbar = (props) => {
+
+	const [modalShow,setModalShow] = useState(false)
 	const id= localStorage.getItem('id');
 	const role = localStorage.getItem('role');
 	const { active } = props;
@@ -29,12 +31,23 @@ const Navbar = (props) => {
 				<header className="container  ">
       <div className="col-md-3 mb-2 mb-md-0">
         <a href="/" className="d-inline-flex link-body-emphasis text-decoration-none">
-          Event Manager
+         <h2><b>Event Manager</b></h2> 
         </a>
+	
       </div>
+	  <p>Role: {role}</p>
       <div className="col-md-3 ">
-        <button className="logout-button" onClick={handleLogout}>Logout</button>
+        <button className="logout-button" onClick={()=>{setModalShow(true)}}>Logout</button>
         {/* <button type="button" className="btn btn-primary">Sign-up</button> */}
+		{modalShow && <div className="delete-modal">
+              <div className="modal-content">
+              <p>Are you sure you want to logout</p>
+              <button onClick={handleLogout}>Yes</button>
+              <button onClick={()=>{setModalShow(false)}}>No</button>
+              </div>
+             
+            </div>
+         }
       </div>
     </header>
 	</div>

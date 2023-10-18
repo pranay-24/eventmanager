@@ -152,7 +152,7 @@ const role = localStorage.getItem('role')
 
 
             {/* Add other event fields here */}
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="normal-button">
               Create Event
             </button>
             </div>

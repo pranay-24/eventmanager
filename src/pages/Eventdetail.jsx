@@ -2,7 +2,7 @@ import React from 'react'
 import {useEffect,useState} from 'react'
 import Navbar from '../components/Navbar'
 import {useParams} from 'react-router-dom'
-
+import './styles/homepage.css'
 const token = localStorage.getItem('token')
 //const role = localStorage.getItem('role')
 
@@ -340,8 +340,12 @@ const addTask = () => {
 
 return (
     <>
+    <div className="">
+  
     <Navbar active = "home"/>
-    <p>This is the Events page </p>
+    </div>
+
+    <div className="slidedown">
 
     <div className="section">
           <h2>Event Information</h2>
@@ -415,21 +419,21 @@ return (
     
     {role === 'Supervisor' && (
       <div className="section">
-        <h2>Add Users</h2>
+        <h2>Add Staff</h2>
           <div>
-            <label>Select a User:</label>
+            <label>Select Staff: </label>
             <select
               value={newUser}
               onChange={(e) => setNewUser(e.target.value)}
             >
-              <option value="">Select a user</option>
+              <option value="">Select Staff</option>
               {users && users.map((user) => (
                 <option key={user._id} value={user._id}>
                   {user.name}, {user.role}
                 </option>
               ))}
             </select>
-            <button onClick={addUser}>Add User</button>
+            <button onClick={addUser}>Add </button>
           </div>
         
         </div>
@@ -494,7 +498,7 @@ return (
         value={newTask.name}
         onChange={(e) => setNewTask({ ...newTask, name: e.target.value })}
       />
-      <button onClick={addTask}>Add Task</button>
+      <button onClick={addTask}>Add </button>
     </div>
   )}
 
@@ -562,7 +566,7 @@ return (
           </div>
     </div> */}
 
-
+</div>
     </>
 )
 }
