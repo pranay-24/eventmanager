@@ -1,0 +1,75 @@
+/* Center the form vertically and horizontally */
+/* div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  width:auto;
+} */
+
+/* Style the form container */
+form {
+  /* width: 1365px; */
+  padding: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style form labels within .mb-3 div */
+.form-label {
+  font-weight: bold;
+  margin-right: 10px; /* Add margin to the right for spacing */
+  width:200px;
+  display:block;
+  margin-top:10px;
+
+}
+
+/* Style form inputs within .mb-3 div */
+.mb-3 .form-control {
+  /* width: 100%; */
+  padding: 8px;
+  margin: 6px 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  transition: border-color 0.2s;
+}
+
+.mb-3 .form-control:focus {
+  border-color: forestgreen; /* Change the border color on focus */
+  outline: none; /* Remove the default focus outline */
+}
+
+/* Style the submit button */
+.btn-primary {
+  background-color: forestgreen;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Change button color on hover */
+}
+
+.form_container{
+  display:flex;
+  flex-direction: column;
+  width:800px;
+
+}
+
+.form_row{
+  display:flex;
+  flex-direction:row;
+  padding:10px;
+}
+
+.required{
+  color:red;
+}
