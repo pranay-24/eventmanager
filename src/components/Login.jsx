@@ -4,11 +4,12 @@ import './styles/login.css'
 
 const Login = (props) => {
     const [credentials, setCredentials] = useState({email: "", password: ""}) 
+    const [authToken,setAuthToken] = useState(localStorage.getItem('token'))
     let navigate = useNavigate();
-    const authToken = localStorage.getItem('token');
+    
     useEffect(() => {
         // Check if the user is already authenticated
-        const authToken = localStorage.getItem('token'); 
+       
         if (authToken) {
             // If the user is authenticated, navigate to the homepage
             navigate('/');
@@ -26,12 +27,13 @@ const Login = (props) => {
         });
         const json = await response.json()
         console.log(json);
-        if (json.success){
+        if (json.success || authToken){
             // Save the auth token and redirect
             localStorage.setItem('token', json.authtoken);
+            setAuthToken(localStorage.getItem('token'))
             localStorage.setItem('role',json.role); 
             localStorage.setItem('id',json.id)
-           authToken && navigate('/');
+            navigate('/');
 
         }
         else{
