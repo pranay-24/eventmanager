@@ -26,10 +26,10 @@ const role = localStorage.getItem('role')
         e.preventDefault();
 
           // Validate required fields
-    if (!eventData.name ) {
-      alert('Please fill in all required fields.');
-      return;
-    }
+    // if (!eventData.name ) {
+    //   alert('Please fill in all required fields.');
+    //   return;
+    // }
     
         // Send eventData to the server to create an event
         try {
