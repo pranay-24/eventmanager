@@ -4,16 +4,10 @@ import './styles/login.css'
 
 const Login = (props) => {
     const [credentials, setCredentials] = useState({email: "", password: ""}) 
-    const [authToken,setAuthToken] = useState(localStorage.getItem('token'))
+    //const [authToken,setAuthToken] = useState(localStorage.getItem('token'))
     let navigate = useNavigate();
-    const location = useLocation();
-    useEffect(() => {
-        // Check if the user is already authenticated and not on the homepage
-        if (authToken !== null && authToken !== '' && location.pathname !== '/') {
-            // If the user is authenticated and not on the homepage, navigate to the homepage
-            navigate('/');
-        }
-    }, [authToken, location, navigate]);
+   // const location = useLocation();
+    
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -26,11 +20,11 @@ const Login = (props) => {
         });
         const json = await response.json()
         console.log(json);
-        if (json.success ){
+        if (response.status === 200 && json.success ){
             console.log(json.success);
             // Save the auth token and redirect
             localStorage.setItem('token', json.authtoken);
-            setAuthToken(json.authtoken);
+            //setAuthToken(json.authtoken);
             localStorage.setItem('role',json.role); 
             localStorage.setItem('id',json.id)
             navigate('/');
