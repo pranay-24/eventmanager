@@ -5,6 +5,8 @@ import Navbar from '../components/Navbar'
 import './styles/addevent.css'
 import './styles/eventdetail.css'
 import './styles/homepage.css'
+const backendroute = 'https://event-backend-ewtb.onrender.com'
+
 const Addevent = ()=>{
 const token = localStorage.getItem('token')
 const role = localStorage.getItem('role')
@@ -31,7 +33,7 @@ const role = localStorage.getItem('role')
     
         // Send eventData to the server to create an event
         try {
-          const response = await fetch('http://localhost:5000/eventapi/events', {
+          const response = await fetch(`${backendroute}/eventapi/events`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

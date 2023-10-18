@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import './styles/adduser.css';
 import './styles/homepage.css'
-
+const backendroute = 'https://event-backend-ewtb.onrender.com'
 const Adduser = () => {
   const token = localStorage.getItem('token');
   const role = localStorage.getItem('role');
@@ -35,7 +35,7 @@ const Adduser = () => {
     e.preventDefault();
     // Send userData to the server to create a user
     try {
-      const response = await fetch('http://localhost:5000/userapi/users', {
+      const response = await fetch(`${backendroute}/userapi/users`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

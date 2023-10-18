@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import './styles/login.css'
-
+const backendroute = 'https://event-backend-ewtb.onrender.com'
 const Login = (props) => {
     const [credentials, setCredentials] = useState({email: "", password: ""}) 
     //const [authToken,setAuthToken] = useState(localStorage.getItem('token'))
@@ -11,7 +11,7 @@ const Login = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch("http://localhost:5000/authapi/login", {
+        const response = await fetch(`${backendroute}/authapi/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -5,7 +5,7 @@ import {useParams} from 'react-router-dom'
 import './styles/homepage.css'
 const token = localStorage.getItem('token')
 //const role = localStorage.getItem('role')
-
+const backendroute = 'https://event-backend-ewtb.onrender.com'
 
 const Eventdetail = ()=>{
 const [ev,setEv] = useState('')
@@ -42,7 +42,7 @@ const fetchEventDetails = () => {
      'role': role, 
     }
   }
-    fetch(`http://localhost:5000/eventapi/events/${eventId}`, requestOptions)
+    fetch(`${backendroute}/eventapi/events/${eventId}`, requestOptions)
     .then((response) => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -86,7 +86,7 @@ const fetchUsersForEvent = async () => {
       ev.users.map((userId) => {
 
 
-    return  fetch(`http://localhost:5000/userapi/users/${userId}`, requestOptions)
+    return  fetch(`${backendroute}/userapi/users/${userId}`, requestOptions)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok.');
@@ -117,7 +117,7 @@ const handleDeleteUser = (userId) => {
 
 const confirmDeleteUser = (userId) => {
   // Fetch the delete user route and remove the user from the list
-  fetch(`http://localhost:5000/eventapi/events/${eventId}/removeuser/${userId}`, {
+  fetch(`${backendroute}/eventapi/events/${eventId}/removeuser/${userId}`, {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
@@ -157,7 +157,7 @@ const handleDeleteTask = (taskId) => {
 
 const confirmDeleteTask = (taskId) => {
   // Fetch the delete user route and remove the user from the list
-  fetch(`http://localhost:5000/taskapi/tasks/${eventId}/${taskId}`, {
+  fetch(`${backendroute}/taskapi/tasks/${eventId}/${taskId}`, {
     method: 'DELETE',
     headers: {
       'Content-type': 'application/json',
@@ -207,7 +207,7 @@ const fetchTasksForEvent = async () => {
 
        
 
-          return fetch(`http://localhost:5000/taskapi/tasks/taskId/${taskId}`, requestOptions).then((response) => {
+          return fetch(`${backendroute}/taskapi/tasks/taskId/${taskId}`, requestOptions).then((response) => {
             if (!response.ok) {
               throw new Error('Network response was not ok.');
             }
@@ -248,7 +248,7 @@ const addUser = () => {
    
   };
 
-  fetch(`http://localhost:5000/eventapi/events/${eventId}/adduser/${newUser}`, requestOptions)
+  fetch(`${backendroute}/eventapi/events/${eventId}/adduser/${newUser}`, requestOptions)
     .then((response) => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -282,7 +282,7 @@ const fetchAvailableUsers = async () => {
       },
     };
 
-    const response = await fetch('http://localhost:5000/userapi/users', requestOptions); // Adjust the endpoint accordingly
+    const response = await fetch(`${backendroute}/userapi/users`, requestOptions); // Adjust the endpoint accordingly
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
@@ -313,7 +313,7 @@ const addTask = () => {
     body: JSON.stringify(newTask)
   }
 
-  fetch(`http://localhost:5000/taskapi/tasks/${eventId}`, requestOptions)
+  fetch(`${backendroute}/taskapi/tasks/${eventId}`, requestOptions)
     .then((response) => {
       if (!response.ok) {
         throw new Error('Network response was not ok');

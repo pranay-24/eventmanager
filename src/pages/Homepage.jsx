@@ -5,6 +5,8 @@ import './styles/homepage.css'
 import {Link} from 'react-router-dom'
 import Navbartop from '../components/Navbartop'
 
+const backendroute = 'https://event-backend-ewtb.onrender.com'
+
 const Homepage = ()=>{
 const token = localStorage.getItem('token')
 const role = localStorage.getItem('role')
@@ -25,7 +27,7 @@ useEffect(()=>{
   
   }
 
-    fetch('http://localhost:5000/eventapi/events', requestOptions)
+    fetch(`${backendroute}/eventapi/events`, requestOptions)
     .then((response) => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -57,7 +59,7 @@ const requestOptions = {
   }
 }
 
-fetch(`http://localhost:5000/eventapi/events/${selectedEvent}`,requestOptions)
+fetch(`${backendroute}/eventapi/events/${selectedEvent}`,requestOptions)
 .then((response)=>{
 
   if(!response.ok){
