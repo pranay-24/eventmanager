@@ -5,7 +5,7 @@ import './styles/homepage.css'
 import {Link} from 'react-router-dom' 
 
 const backendroute = 'https://event-backend-ewtb.onrender.com'
-
+const localroute = 'http://localhost:5000'
 const Users = ()=>{
 const token = localStorage.getItem('token')
 const role = localStorage.getItem('role')
@@ -24,7 +24,7 @@ useEffect(()=>{
   
   }
 
-    fetch(`${backendroute}/userapi/users`, requestOptions)
+    fetch(`${localroute}/userapi/users`, requestOptions)
     .then((response) => {
       if (!response.ok) {
         throw new Error('Network response was not ok');

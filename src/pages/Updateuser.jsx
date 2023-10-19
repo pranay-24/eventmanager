@@ -5,6 +5,7 @@ import {useParams, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import './styles/adduser.css';
 const backendroute = 'https://event-backend-ewtb.onrender.com'
+const localroute = 'http://localhost:5000'
 const Updateuser = () => {
   const token = localStorage.getItem('token');
   const role = localStorage.getItem('role');
@@ -39,7 +40,7 @@ const Updateuser = () => {
         },
       };
 
-      fetch(`${backendroute}/userapi/users/${userId}`, requestOptions)
+      fetch(`${localroute}/userapi/users/${userId}`, requestOptions)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -62,7 +63,7 @@ const Updateuser = () => {
     e.preventDefault();
     // Send userData to the server to create a user
     try {
-      const response = await fetch(`${backendroute}/userapi/users/${userId}`, {
+      const response = await fetch(`${localroute}/userapi/users/${userId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

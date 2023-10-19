@@ -5,6 +5,7 @@ import {useParams, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import './styles/adduser.css';
 const backendroute = 'https://event-backend-ewtb.onrender.com'
+const localroute = 'http://localhost:5000'
 const Updatevent = () => {
   const token = localStorage.getItem('token');
   const role = localStorage.getItem('role');
@@ -30,7 +31,7 @@ const Updatevent = () => {
         },
       };
 
-      fetch(`${backendroute}/eventapi/events/${eventId}`, requestOptions)
+      fetch(`${localroute}/eventapi/events/${eventId}`, requestOptions)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -54,7 +55,7 @@ const Updatevent = () => {
     e.preventDefault();
     // Send userData to the server to create a user
     try {
-      const response = await fetch(`${backendroute}/eventapi/events/${eventId}`, {
+      const response = await fetch(`${localroute}/eventapi/events/${eventId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

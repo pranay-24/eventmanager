@@ -7,6 +7,7 @@ const token = localStorage.getItem('token')
 const role = localStorage.getItem('role')
 
 const backendroute = 'https://event-backend-ewtb.onrender.com'
+const localroute = 'http://localhost:5000'
 const Profile = ()=>{
 const [user,setUser] = useState('')
 const {userId} = useParams()
@@ -23,7 +24,7 @@ useEffect(()=>{
   
   }
 
-    fetch(`${backendroute}/userapi/users/${userId}`, requestOptions)
+    fetch(`${localroute}/userapi/users/${userId}`, requestOptions)
     .then((response) => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
