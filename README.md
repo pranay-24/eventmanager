@@ -1,4 +1,4 @@
-## This app is the full stack application for managing an events. 
+## This app is the full stack application for managing events. 
 It is based on MERN stack.
 It has features like role based access, authentication. A user can view the events/tasks and an admin can create a new user/new event and assign tasks for a user
 -Front End is hosted on the below link
