@@ -29,7 +29,7 @@ useEffect(()=>{
   
   }
 
-    fetch(`${localroute}/eventapi/events`, requestOptions)
+    fetch(`${backendroute}/eventapi/events`, requestOptions)
     .then((response) => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -61,7 +61,7 @@ const requestOptions = {
   }
 }
 
-fetch(`${localroute}/eventapi/events/${selectedEvent}`,requestOptions)
+fetch(`${backendroute}/eventapi/events/${selectedEvent}`,requestOptions)
 .then((response)=>{
 
   if(!response.ok){

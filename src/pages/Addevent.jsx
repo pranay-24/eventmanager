@@ -33,7 +33,7 @@ const role = localStorage.getItem('role')
     
         // Send eventData to the server to create an event
         try {
-          const response = await fetch(`${localroute}/eventapi/events`, {
+          const response = await fetch(`${backendroute}/eventapi/events`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

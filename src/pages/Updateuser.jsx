@@ -40,7 +40,7 @@ const Updateuser = () => {
         },
       };
 
-      fetch(`${localroute}/userapi/users/${userId}`, requestOptions)
+      fetch(`${backendroute}/userapi/users/${userId}`, requestOptions)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
