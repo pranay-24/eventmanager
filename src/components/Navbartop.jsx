@@ -17,6 +17,7 @@ const Navbartop = ()=>{
     }
     return (
 <div>
+
     {/* <div classNameName="container">
         <Link to="/"><h2>Event Manager</h2></Link>
         <p>Role: {role}</p>
@@ -29,7 +30,9 @@ const Navbartop = ()=>{
           Event Manager
         </a>
       </div>
-
+{/* <div>
+  Not using this component rightnow
+</div> */}
     
 
       <div className="col-md-3 text-end">
