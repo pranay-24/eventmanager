@@ -18,7 +18,7 @@ const Navbar = (props) => {
     localStorage.removeItem('token');
     localStorage.removeItem('role');
     localStorage.removeItem('id');
-    navigate('/');
+    navigate('/login');
 
     }
 
