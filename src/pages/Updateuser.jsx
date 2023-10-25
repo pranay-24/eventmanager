@@ -36,7 +36,7 @@ const Updateuser = () => {
         headers: {
           'Content-Type': 'application/json',
           'auth-token': `${token}`,
-          role,
+          'role':role,
         },
       };
 
@@ -68,7 +68,7 @@ const Updateuser = () => {
         headers: {
           'Content-Type': 'application/json',
           'auth-token': `${token}`, // Include the JWT token
-          role,
+          'role':role,
         },
         body: JSON.stringify(userData),
       });

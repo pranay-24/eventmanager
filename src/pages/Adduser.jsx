@@ -41,7 +41,7 @@ const Adduser = () => {
         headers: {
           'Content-Type': 'application/json',
           'auth-token': `${token}`, // Include the JWT token
-          role,
+          'role':role,
         },
         body: JSON.stringify(userData),
       });

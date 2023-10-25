@@ -77,7 +77,7 @@ const fetchUsersForEvent = async () => {
       headers: {
         'Content-type': 'application/json',
         'auth-token': token,
-        role: role,
+        'role': role,
       },
     };
 
@@ -123,7 +123,7 @@ const confirmDeleteUser = (userId) => {
     headers: {
       'Content-type': 'application/json',
       'auth-token': token,
-      role: role,
+      'role': role,
     },
   })
     .then((response) => {
@@ -163,7 +163,7 @@ const confirmDeleteTask = (taskId) => {
     headers: {
       'Content-type': 'application/json',
       'auth-token': token,
-      role: role,
+      'role': role,
     },
   })
     .then((response) => {
@@ -198,7 +198,7 @@ const fetchTasksForEvent = async () => {
         headers: {
           'Content-type': 'application/json',
           'auth-token': `${token}`,
-          role: role,
+          'role': role,
         },
       };
 
@@ -244,7 +244,7 @@ const addUser = () => {
     headers: {
       'Content-type': 'application/json',
       'auth-token': token,
-      role,
+      'role':role,
     },
    
   };
@@ -279,7 +279,7 @@ const fetchAvailableUsers = async () => {
       headers: {
         'Content-type': 'application/json',
         'auth-token': token,
-        role: role,
+        'role': role,
       },
     };
 

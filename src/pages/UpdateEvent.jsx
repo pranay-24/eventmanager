@@ -27,7 +27,7 @@ const Updatevent = () => {
         headers: {
           'Content-Type': 'application/json',
           'auth-token': `${token}`,
-          role,
+          'role':role,
         },
       };
 
@@ -60,7 +60,7 @@ const Updatevent = () => {
         headers: {
           'Content-Type': 'application/json',
           'auth-token': `${token}`, // Include the JWT token
-          role,
+          'role':role,
         },
         body: JSON.stringify(eventData),
       });
