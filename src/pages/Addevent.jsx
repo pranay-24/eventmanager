@@ -18,6 +18,8 @@ const role = localStorage.getItem('role')
         endAt: '',
         guestcount: '',
         room: '',
+        users:[],
+        tasks:[],
       });
     
       const navigate = useNavigate();
@@ -131,6 +133,7 @@ const role = localStorage.getItem('role')
             value={eventData.room}
             onChange={onChange}
             name="room"
+            id="room"
           >
             <option value="">Select a room</option>
             <option value="Hall1">Hall 1</option>
