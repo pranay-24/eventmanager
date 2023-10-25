@@ -39,7 +39,7 @@ const fetchEventDetails = () => {
     method: 'GET',
     headers:{
      'Content-type':'application/json',
-     'auth-token': `${token}`, // Include the JWT token
+     'auth-token': token, // Include the JWT token
      'role': role, 
     }
   }
@@ -197,7 +197,7 @@ const fetchTasksForEvent = async () => {
         method: 'GET',
         headers: {
           'Content-type': 'application/json',
-          'auth-token': `${token}`,
+          'auth-token': token,
           'role': role,
         },
       };
@@ -308,7 +308,7 @@ const addTask = () => {
     method: 'POST',
     headers:{
      'Content-type':'application/json',
-     'auth-token': `${token}`, // Include the JWT token
+     'auth-token':token, // Include the JWT token
      'role': role, 
     },
     body: JSON.stringify(newTask)

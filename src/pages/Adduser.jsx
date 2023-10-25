@@ -40,7 +40,7 @@ const Adduser = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'auth-token': `${token}`, // Include the JWT token
+          'auth-token': token, // Include the JWT token
           'role':role,
         },
         body: JSON.stringify(userData),

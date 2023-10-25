@@ -26,7 +26,7 @@ const Updatevent = () => {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          'auth-token': `${token}`,
+          'auth-token': token,
           'role':role,
         },
       };
@@ -59,7 +59,7 @@ const Updatevent = () => {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          'auth-token': `${token}`, // Include the JWT token
+          'auth-token': token, // Include the JWT token
           'role':role,
         },
         body: JSON.stringify(eventData),

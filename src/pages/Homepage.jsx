@@ -23,7 +23,7 @@ useEffect(()=>{
     method: 'GET',
     headers:{
      'Content-type':'application/json',
-     'auth-token': `${token}`, // Include the JWT token
+     'auth-token': token, // Include the JWT token
      'role': role, 
     }
   
