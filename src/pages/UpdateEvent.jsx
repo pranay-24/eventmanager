@@ -55,7 +55,7 @@ const Updatevent = () => {
     e.preventDefault();
     // Send userData to the server to create a user
     try {
-      const response = await fetch(`${localroute}/eventapi/events/${eventId}`, {
+      const response = await fetch(`${backendroute}/eventapi/events/${eventId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
