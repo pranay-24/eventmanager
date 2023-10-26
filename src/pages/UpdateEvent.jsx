@@ -86,7 +86,7 @@ const Updatevent = () => {
 
   return (
     <>
-      <Navbar active="Staff" />
+      <Navbar active="event" />
       <div className="center-container">
 
      
@@ -115,6 +115,7 @@ const Updatevent = () => {
                 value={eventData.date}
                 onChange={onChange}
                 name="date"
+                id="date"
               />
             </div>
 
@@ -128,6 +129,7 @@ const Updatevent = () => {
                 value={eventData.startFrom}
                 onChange={onChange}
                 name="startFrom"
+                id="startFrom"
               />
             </div>
 
@@ -141,6 +143,7 @@ const Updatevent = () => {
                 value={eventData.endAt}
                 onChange={onChange}
                 name="endAt"
+                id="endAt"
               />
             </div>
 
@@ -153,6 +156,7 @@ const Updatevent = () => {
             value={eventData.room}
             onChange={onChange}
             name="room"
+            id="room"
           >
             <option value="">Select a room</option>
             <option value="Hall1">Hall 1</option>
@@ -174,6 +178,7 @@ const Updatevent = () => {
                 value={eventData.guestcount}
                 onChange={onChange}
                 name="guestcount"
+                id="guestcount"
               />
             </div>
 
