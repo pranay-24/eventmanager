@@ -18,7 +18,8 @@ const Updatevent = () => {
     endAt: '',
     guestcount: '',
     room: '',
-    
+    users:[],
+    tasks:[],
   });
 
   useEffect(()=>{
