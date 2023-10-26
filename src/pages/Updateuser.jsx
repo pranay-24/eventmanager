@@ -63,7 +63,7 @@ const Updateuser = () => {
     e.preventDefault();
     // Send userData to the server to create a user
     try {
-      const response = await fetch(`${localroute}/userapi/users/${userId}`, {
+      const response = await fetch(`${backendroute}/userapi/users/${userId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
