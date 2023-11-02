@@ -4,14 +4,17 @@ import Navbar from '../components/Navbar'
 import './styles/homepage.css'
 import {Link} from 'react-router-dom'
 import Navbartop from '../components/Navbartop'
+import { AuthContext } from '../components/AuthFunction'
+import { useContext } from 'react'
 
 const backendroute = 'https://event-backend-ewtb.onrender.com'
 const localroute = 'http://localhost:5000'
 
 
 const Homepage = ()=>{
-const token = localStorage.getItem('token')
-const role = localStorage.getItem('role')
+const {token, role} = useContext(AuthContext);
+// const token = localStorage.getItem('token')
+// const role = localStorage.getItem('role')
 //console.log(token);
 const [eve,setEv]=useState([]);
 const [showConfirmation, setShowConfirmation] = useState(false);
