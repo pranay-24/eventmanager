@@ -1,14 +1,10 @@
 import React, {useState,useEffect} from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import './styles/login.css'
-import {useContext} from 'react'
-import { AuthContext } from './AuthFunction'
-
 const backendroute = 'https://event-backend-ewtb.onrender.com'
 const Login = (props) => {
     const [credentials, setCredentials] = useState({email: "", password: ""}) 
-    const {setAuthData} = useContext(AuthContext)
-    //const [authToken,setAuthToken] = useState(localStorage.getItem('token'))
+    //const [authToken,setAuthToken] = useState(localStorage.getItem('token')) 
     let navigate = useNavigate();
    // const location = useLocation();
     
@@ -26,16 +22,12 @@ const Login = (props) => {
         console.log(json);
         if ( json.success ){
             console.log(json.success);
-            setAuthData(json)
-            // Save the auth token and redirec
-            // localStorage.setItem('token', json.authtoken);
+            // Save the auth token and redirect
+            localStorage.setItem('token', json.authtoken);
             //setAuthToken(json.authtoken);
-            // localStorage.setItem('role',json.role); 
-            // localStorage.setItem('id',json.id)
-        
-            setTimeout(() => {
-                navigate('/');
-              }, 1000);
+            localStorage.setItem('role',json.role); 
+            localStorage.setItem('id',json.id)
+            navigate('/');
           
         }
         else{
