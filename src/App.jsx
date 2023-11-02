@@ -9,6 +9,7 @@ import Profile from './pages/Profile';
 import Homepage from './pages/Homepage';
 import Updateuser from './pages/Updateuser';
 import Updatevent from './pages/UpdateEvent';
+import { AuthProvider } from './components/AuthFunction';
 
 import Eventdetail from './pages/Eventdetail'
 
@@ -41,7 +42,7 @@ function App() {
   
   return (
     <>
-
+<AuthProvider>
       
       <BrowserRouter>
       
@@ -93,6 +94,7 @@ function App() {
 
       </Routes>
       </BrowserRouter>
+      </AuthProvider>
     </>
   )
 }
