@@ -10,7 +10,8 @@ import Homepage from './pages/Homepage';
 import Updateuser from './pages/Updateuser';
 import Updatevent from './pages/UpdateEvent';
 import { AuthProvider } from './components/AuthFunction';
-
+import { useContext } from 'react'
+import { AuthContext } from './components/AuthFunction';
 import Eventdetail from './pages/Eventdetail'
 
 import Users from './pages/Users';
@@ -19,10 +20,11 @@ const backendroute = 'https://event-backend-ewtb.onrender.com'
 function App() {
   //const [count, setCount] = useState(0)
   const [authenticated, setAuthenticated] = useState(false);
-
+  const {token, role} = useContext(AuthContext);
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    const role = localStorage.getItem('role');
+  
+    //const token = localStorage.getItem('token');
+   // const role = localStorage.getItem('role');
     console.log(token)
     console.log(role)
 
