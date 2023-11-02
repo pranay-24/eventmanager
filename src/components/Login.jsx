@@ -27,7 +27,7 @@ const Login = (props) => {
         if ( json.success ){
             console.log(json.success);
             setAuthData(json)
-            // Save the auth token and redirect
+            // Save the auth token and redirec
             // localStorage.setItem('token', json.authtoken);
             //setAuthToken(json.authtoken);
             // localStorage.setItem('role',json.role); 
